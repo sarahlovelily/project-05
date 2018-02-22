@@ -1,0 +1,34 @@
+// Text
+
+.headline--primary {
+	@extend %hdln-prim;
+}
+
+.headline--secondary {
+	@extend %hdln-sec;
+}
+
+
+.link {
+	color: $color-primary;
+	text-decoration: none;
+	font-weight: $font-weight--bold;
+}
+
+
+
+.blockquote {
+	@media (min-width: 769px) {
+		margin: em(32px, 24px) 0;
+
+
+		font-size: em(24px);
+	}
+  color : palette(grey);
+	font-weight: $font-weight--medium;
+	font-style : italic;
+	font-size : em(26px);
+  border-left: em(8px, 24px) solid $color-primary;
+  padding: 0 0 0 5%;
+  border-radius: $br--default;
+}

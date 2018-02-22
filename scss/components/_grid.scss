@@ -1,0 +1,95 @@
+// ==========================================================================
+// Grid Columns
+// ==========================================================================
+
+// Calculate grid columns
+
+.grid__col {
+  @include mq(medium) {
+    @include g-columns;
+  }
+}
+
+// Column styles
+
+[class^="grid__col--"] {
+  @include mq(small)  {
+    margin-top: em(12px);
+    margin-bottom: em(12px);
+  }
+  @include mq(medium) {
+    @include doubly(percentage($g-gutter-width / $context));
+    float: left;
+    min-height: 1px;
+    padding-left: 10px;
+    padding-right: 10px;
+    &:last-of-type {
+      float: right;
+    }
+  }
+}
+
+// ==========================================================================
+// Grid Container
+// ==========================================================================
+
+.grid__row {
+  @extend %clearfix;
+  @extend .centered;
+  width:100%;
+  padding-bottom: em(20px);
+  padding-top: em(20px);
+
+  // Make nested grid 100%
+  [class*="grid__col--"] > & {
+    width: 100%;
+  }
+
+  // Set a max-width for grid container
+  @include mq(large) {
+    max-width: $g-cont-max-w;
+  }
+}
+
+
+
+// ==========================================================================
+// card& Container
+// ==========================================================================
+
+.container {
+  padding: em(18px);
+  @extend .centered;
+  width:90%;
+}
+.card {
+  padding-top: em(24px);
+  padding-bottom: em(24px);
+}
+
+// ==========================================================================
+// Grid Color
+// ==========================================================================
+
+.theme__colors.grid__col{
+  @each $theme, $color in $grid-colors {
+    &--#{$theme} {
+            background-color: $color;
+            border: 0;
+            border-radius : $br--default;
+            padding: 15px 30px;
+            font-size: em(18px);
+            color:$grey;
+            font-weight :$font-weight--bold;
+    }
+   }
+}
+
+// ==========================================================================
+// Flexbox
+// ==========================================================================
+.grid__row {
+  @include mq(medium){
+    @include flexbox(row,wrap,space-between);
+  }
+}

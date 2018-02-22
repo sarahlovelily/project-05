@@ -1,0 +1,34 @@
+// ==========================================================================
+// Images
+// ==========================================================================
+// img {
+//   margin-bottom: em(24px);
+//   max-width: 100%;
+//   height: auto;
+// }
+
+.img {
+  @include m(logo) {
+      display:block;
+      @extend .centered;
+
+  }
+  @include m(avatar) {
+    display: block;
+    border-radius: $br--round;
+    @extend .centered;
+    padding: em(20px);
+  }
+
+  @include m(frame) {
+    border: 1px solid palette(grey, x-light);
+    padding: em(12px);
+    display: block;
+    @extend .centered;
+    max-width: 100%;
+    width:100%;
+
+  }
+
+
+}

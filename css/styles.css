@@ -384,7 +384,8 @@ footer {
 
 .container {
   padding: 0.75em;
-  width: 90%; }
+  width: 90%;
+  max-width: 1240px; }
 
 .card {
   padding-top: 1em;

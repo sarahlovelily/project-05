@@ -61,6 +61,7 @@
   padding: em(18px);
   @extend .centered;
   width:90%;
+  max-width: 1240px;
 }
 .card {
   padding-top: em(24px);
